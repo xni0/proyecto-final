@@ -21,9 +21,9 @@ export function Login() {
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center p-8">
-      <div className="bg-white p-12 rounded-2xl shadow-2xl w-full max-w-md">
-        <h1 className="text-center text-3xl mb-8 text-primary-dark">🎬 Iniciar Sesión</h1>
+    <div className="min-h-[80vh] flex items-center justify-center p-4 sm:p-8">
+      <div className="bg-white p-6 sm:p-12 rounded-2xl shadow-2xl w-full max-w-md">
+        <h1 className="text-center text-2xl sm:text-3xl mb-6 sm:mb-8 text-primary-dark">🎬 Iniciar Sesión</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <Input
             type="text"
@@ -41,7 +41,7 @@ export function Login() {
           />
           {error && <p className="text-red-600 text-sm text-center m-0">{error}</p>}
           <Button type="submit">Iniciar Sesión</Button>
-          <p className="text-center text-[0.85rem] text-gray-500 mt-4">
+          <p className="text-center text-xs sm:text-[0.85rem] text-gray-500 mt-4">
             Usa tus credenciales del API.
           </p>
         </form>

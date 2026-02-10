@@ -59,16 +59,16 @@ export function Genres() {
   }, [selectedGenres]);
 
   return (
-    <div>
-      <div className="text-center mb-12 p-8 bg-white rounded-2xl shadow-lg">
-        <h1 className="text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Explorar por Género</h1>
-        <p className="text-lg text-gray-500 m-0">
+    <div className="px-2 sm:px-0">
+      <div className="text-center mb-8 sm:mb-12 p-5 sm:p-8 bg-white rounded-2xl shadow-lg">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Explorar por Género</h1>
+        <p className="text-base sm:text-lg text-gray-500 m-0">
           Selecciona uno o varios géneros para descubrir películas
         </p>
       </div>
 
       {/* Mostrar botones de géneros */}
-      <div className="flex flex-wrap gap-3 justify-center mb-12">
+      <div className="flex flex-wrap gap-2 sm:gap-3 justify-center mb-8 sm:mb-12">
         {genres.map((genre) => {
           // Determinar el estilo del botón
           let buttonStyle = 'bg-white text-primary-dark border-2 border-gray-200 hover:border-primary hover:text-primary hover:-translate-y-0.5';
@@ -80,7 +80,7 @@ export function Genres() {
             <button
               key={genre.id}
               onClick={() => handleGenreToggle(genre.id)}
-              className={`px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 cursor-pointer ${buttonStyle}`}
+              className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 cursor-pointer ${buttonStyle}`}
             >
               {genre.name}
             </button>
@@ -89,14 +89,14 @@ export function Genres() {
       </div>
 
       {loading && (
-        <div className="text-center py-12">
+        <div className="text-center py-8 sm:py-12">
           <Loader />
         </div>
       )}
 
       {error && (
-        <div className="text-center py-12">
-          <p className="text-red-600 text-xl">❌ {error}</p>
+        <div className="text-center py-8 sm:py-12">
+          <p className="text-red-600 text-base sm:text-xl">❌ {error}</p>
         </div>
       )}
 
@@ -105,13 +105,13 @@ export function Genres() {
       )}
 
       {!loading && !error && selectedGenres.length > 0 && movies.length === 0 && (
-        <div className="text-center py-12 text-gray-500 text-lg">
+        <div className="text-center py-8 sm:py-12 text-gray-500 text-base sm:text-lg">
           <p>No se encontraron películas en este género</p>
         </div>
       )}
 
       {!loading && !error && selectedGenres.length === 0 && (
-        <div className="text-center py-12 text-gray-500 text-lg">
+        <div className="text-center py-8 sm:py-12 text-gray-500 text-base sm:text-lg">
           <p>🎭 Selecciona uno o varios géneros para comenzar</p>
         </div>
       )}

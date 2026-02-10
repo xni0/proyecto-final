@@ -24,7 +24,7 @@ export default function Input({
       value={value}
       onChange={onChange}
       required={required}
-      className={`px-4 py-3 border-2 border-gray-300 rounded-lg text-base transition-colors duration-200 focus:outline-none focus:border-primary placeholder:text-gray-400 ${className}`}
+      className={`px-4 py-2.5 sm:py-3 border-2 border-gray-300 rounded-lg text-sm sm:text-base transition-colors duration-200 focus:outline-none focus:border-primary placeholder:text-gray-400 ${className}`}
     />
   );
 }

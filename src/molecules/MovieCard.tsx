@@ -42,7 +42,7 @@ export default function MovieCard({ movie }: MovieCardProps) {
             fill={isFav ? "#ef4444" : "none"} // Rojo si es fav, transparente si no
             stroke={isFav ? "#ef4444" : "currentColor"}
             strokeWidth="2"
-            className="w-6 h-6"
+            className="w-5 h-5 sm:w-6 sm:h-6"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
           </svg>
@@ -56,14 +56,14 @@ export default function MovieCard({ movie }: MovieCardProps) {
           <img
             src={imageUrl}
             alt={movie.title}
-            className="w-full h-80 object-cover transition-transform duration-400 group-hover:scale-105"
+            className="w-full h-72 sm:h-80 object-cover transition-transform duration-400 group-hover:scale-105"
           />
         );
       })()}
-      <div className="p-5 bg-gradient-to-br from-white to-gray-50">
-        <h3 className="text-base font-bold my-0 mb-2.5 text-primary-dark leading-snug line-clamp-2">{movie.title}</h3>
+      <div className="p-4 sm:p-5 bg-gradient-to-br from-white to-gray-50">
+        <h3 className="text-sm sm:text-base font-bold my-0 mb-2.5 text-primary-dark leading-snug line-clamp-2">{movie.title}</h3>
         <p className="text-sm text-primary my-1 font-bold">⭐ {movie.vote_average.toFixed(1)}</p>
-        <p className="text-[0.85rem] text-gray-500 my-1 font-medium">{movie.release_date}</p>
+        <p className="text-[0.8rem] sm:text-[0.85rem] text-gray-500 my-1 font-medium">{movie.release_date}</p>
       </div>
     </div>
   );

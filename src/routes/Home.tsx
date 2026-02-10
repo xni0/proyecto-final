@@ -75,7 +75,7 @@ export function Home() {
   if (error) {
     return (
       <div className="text-center py-12">
-        <p className="text-red-600 text-xl">❌ {error}</p>
+        <p className="text-red-600 text-base sm:text-xl">❌ {error}</p>
       </div>
     );
   }
@@ -83,9 +83,9 @@ export function Home() {
   return (
     <div className="animate-[fadeIn_0.6s_ease]">
       {/* Encabezado */}
-      <div className="text-center mb-12 p-8 bg-white rounded-2xl shadow-lg">
-        <h1 className="text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Películas Populares</h1>
-        <p className="text-lg text-gray-500 m-0">
+      <div className="text-center mb-8 sm:mb-12 p-5 sm:p-8 bg-white rounded-2xl shadow-lg">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Películas Populares</h1>
+        <p className="text-base sm:text-lg text-gray-500 m-0">
           Descubre las películas más populares del momento
         </p>
       </div>
@@ -94,7 +94,7 @@ export function Home() {
       <MovieGrid movies={movies} />
 
       {/* Botón para cargar más */}
-      <div className="text-center mt-12 p-8">
+      <div className="text-center mt-8 sm:mt-12 p-4 sm:p-8">
         <Button onClick={cargarMas} disabled={loading}>
           {loading ? 'Cargando...' : 'Cargar Más Películas'}
         </Button>

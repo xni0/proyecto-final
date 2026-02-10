@@ -71,7 +71,7 @@ export function MovieDetail() {
 
           return (
             <div
-              className="w-full h-[500px] bg-cover bg-center"
+              className="w-full h-[360px] sm:h-[500px] bg-cover bg-center"
               style={{
                 backgroundImage: imagenFondo,
               }}
@@ -82,10 +82,10 @@ export function MovieDetail() {
         })()}
 
         {/* Información principal sobre la imagen */}
-        <div className="absolute bottom-0 left-0 right-0 px-8 pb-8">
-          <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row gap-8">
+        <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-8 pb-6 sm:pb-8">
+          <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row gap-6 sm:gap-8">
             {/* Póster */}
-            <div className="flex-shrink-0 w-full md:w-64">
+            <div className="flex-shrink-0 w-full sm:w-64">
               {/* Determinar imagen del póster */}
               {(() => {
                 let imagenPoster = '/placeholder.jpg';
@@ -105,13 +105,13 @@ export function MovieDetail() {
 
             {/* Información básica */}
             <div className="flex-1 text-white">
-              <h1 className="text-5xl font-black mb-4">{movie.title}</h1>
+              <h1 className="text-3xl sm:text-5xl font-black mb-4">{movie.title}</h1>
 
               {movie.tagline && (
-                <p className="text-xl italic text-gray-300 mb-6">"{movie.tagline}"</p>
+                <p className="text-base sm:text-xl italic text-gray-300 mb-6">"{movie.tagline}"</p>
               )}
 
-              <div className="flex gap-6 mb-6 text-lg">
+              <div className="flex flex-wrap gap-4 sm:gap-6 mb-6 text-base sm:text-lg">
                 <span className="font-bold">⭐ {movie.vote_average.toFixed(1)}</span>
                 <span>{movie.release_date.split('-')[0]}</span>
                 <span>{movie.runtime} min</span>
@@ -121,7 +121,7 @@ export function MovieDetail() {
               <div className="flex flex-wrap gap-2 mb-4">
                 {movie.genres.map((genre) => {
                   return (
-                    <span key={genre.id} className="px-4 py-2 bg-primary text-white rounded-full text-sm font-semibold">
+                    <span key={genre.id} className="px-4 py-2 bg-primary text-white rounded-full text-xs sm:text-sm font-semibold">
                       {genre.name}
                     </span>
                   );
@@ -133,19 +133,19 @@ export function MovieDetail() {
       </div>
 
       {/* SECCIÓN DE CONTENIDO: Fondo oscuro sólido */}
-      <div className="bg-gray-900 px-8 py-12">
+      <div className="bg-gray-900 px-4 sm:px-8 py-8 sm:py-12">
         <div className="max-w-[1400px] mx-auto">
           
           {/* Sinopsis */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-white">Sinopsis</h2>
-            <p className="text-lg leading-relaxed text-gray-300">{movie.overview}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Sinopsis</h2>
+            <p className="text-base sm:text-lg leading-relaxed text-gray-300">{movie.overview}</p>
           </div>
 
           {/* SECCIÓN DE DIRECTORES */}
           {credits && (
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-white">Directores</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-white">Directores</h2>
               <div className="flex flex-wrap gap-4">
                 {credits.crew.map((persona) => {
                   // Solo mostrar si es director
@@ -171,8 +171,8 @@ export function MovieDetail() {
                         className="w-16 h-16 rounded-full object-cover border-2 border-gray-600"
                       />
                       <div>
-                        <p className="font-bold text-white text-lg">{persona.name}</p>
-                        <p className="text-sm text-gray-400">Director</p>
+                        <p className="font-bold text-white text-base sm:text-lg">{persona.name}</p>
+                        <p className="text-xs sm:text-sm text-gray-400">Director</p>
                       </div>
                     </div>
                   );
@@ -184,8 +184,8 @@ export function MovieDetail() {
           {/* SECCIÓN DE ACTORES */}
           {credits && (
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-6 text-white">Reparto completo</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-white">Reparto completo</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                 {credits.cast.map((actor, index) => {
                   // Solo mostrar los actores hasta el límite actual
                   if (index >= actoresAMostrar) {
@@ -207,7 +207,7 @@ export function MovieDetail() {
                       <img
                         src={fotoActor}
                         alt={actor.name}
-                        className="w-full h-56 object-cover"
+                        className="w-full h-44 sm:h-56 object-cover"
                       />
                       <div className="p-4">
                         <p className="font-bold text-white text-sm mb-1">{actor.name}</p>

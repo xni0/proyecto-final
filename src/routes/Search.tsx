@@ -64,14 +64,14 @@ export function Search() {
 
   return (
     <div>
-      <div className="text-center mb-12 p-8 bg-white rounded-2xl shadow-lg">
-        <h1 className="text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Buscar Películas</h1>
-        <p className="text-lg text-gray-500 m-0">
+      <div className="text-center mb-8 sm:mb-12 p-5 sm:p-8 bg-white rounded-2xl shadow-lg">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Buscar Películas</h1>
+        <p className="text-base sm:text-lg text-gray-500 m-0">
           Encuentra tus películas favoritas por título
         </p>
       </div>
 
-      <div className="max-w-3xl mx-auto mb-12">
+      <div className="max-w-3xl mx-auto mb-8 sm:mb-12">
         <Input
           type="text"
           placeholder="Escribe el título de una película..."
@@ -82,19 +82,19 @@ export function Search() {
       </div>
 
       {loading && (
-        <div className="text-center py-12">
+        <div className="text-center py-8 sm:py-12">
           <Loader />
         </div>
       )}
 
       {error && (
-        <div className="text-center py-12">
-          <p className="text-red-600 text-xl">❌ {error}</p>
+        <div className="text-center py-8 sm:py-12">
+          <p className="text-red-600 text-base sm:text-xl">❌ {error}</p>
         </div>
       )}
 
       {!loading && !error && hasSearched && movies.length === 0 && (
-        <div className="text-center py-12 text-gray-500 text-lg">
+        <div className="text-center py-8 sm:py-12 text-gray-500 text-base sm:text-lg">
           <p>No se encontraron películas con ese título</p>
         </div>
       )}
@@ -104,7 +104,7 @@ export function Search() {
       )}
 
       {!loading && !error && !hasSearched && (
-        <div className="text-center py-12 text-gray-500 text-lg">
+        <div className="text-center py-8 sm:py-12 text-gray-500 text-base sm:text-lg">
           <p>🔍 Escribe el título de una película para buscar</p>
         </div>
       )}

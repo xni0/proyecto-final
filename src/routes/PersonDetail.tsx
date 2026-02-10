@@ -61,14 +61,14 @@ export function PersonDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-12">
-      <div className="max-w-[1200px] mx-auto px-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-8 sm:py-12">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
         
         {/* Información principal */}
-        <div className="flex flex-col md:flex-row gap-8 mb-12">
+        <div className="flex flex-col md:flex-row gap-6 sm:gap-8 mb-10 sm:mb-12">
           
           {/* Foto de perfil */}
-          <div className="flex-shrink-0 w-full md:w-80">
+          <div className="flex-shrink-0 w-full sm:w-80">
             <img
               src={imagenPerfil}
               alt={person.name}
@@ -78,16 +78,16 @@ export function PersonDetail() {
 
           {/* Información básica */}
           <div className="flex-1">
-            <h1 className="text-5xl font-black mb-4 text-white">{person.name}</h1>
+            <h1 className="text-3xl sm:text-5xl font-black mb-4 text-white">{person.name}</h1>
             
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 mb-6">
+            <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6 mb-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white">
                 
                 {/* Departamento conocido */}
                 {person.known_for_department && (
                   <div>
                     <span className="block text-sm text-gray-400 mb-1">Conocido por</span>
-                    <span className="block text-lg font-bold">{person.known_for_department}</span>
+                    <span className="block text-base sm:text-lg font-bold">{person.known_for_department}</span>
                   </div>
                 )}
 
@@ -95,7 +95,7 @@ export function PersonDetail() {
                 {person.birthday && (
                   <div>
                     <span className="block text-sm text-gray-400 mb-1">Fecha de nacimiento</span>
-                    <span className="block text-lg font-bold">{person.birthday}</span>
+                    <span className="block text-base sm:text-lg font-bold">{person.birthday}</span>
                   </div>
                 )}
 
@@ -103,7 +103,7 @@ export function PersonDetail() {
                 {person.place_of_birth && (
                   <div className="md:col-span-2">
                     <span className="block text-sm text-gray-400 mb-1">Lugar de nacimiento</span>
-                    <span className="block text-lg font-bold">{person.place_of_birth}</span>
+                    <span className="block text-base sm:text-lg font-bold">{person.place_of_birth}</span>
                   </div>
                 )}
 
@@ -111,7 +111,7 @@ export function PersonDetail() {
                 {person.deathday && (
                   <div>
                     <span className="block text-sm text-gray-400 mb-1">Fecha de fallecimiento</span>
-                    <span className="block text-lg font-bold">{person.deathday}</span>
+                    <span className="block text-base sm:text-lg font-bold">{person.deathday}</span>
                   </div>
                 )}
               </div>
@@ -122,9 +122,9 @@ export function PersonDetail() {
         {/* Biografía */}
         {person.biography && (
           <div className="mb-8">
-            <h2 className="text-3xl font-bold mb-4 text-white">Biografía</h2>
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
-              <p className="text-lg leading-relaxed text-gray-300 whitespace-pre-line">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Biografía</h2>
+            <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6">
+              <p className="text-base sm:text-lg leading-relaxed text-gray-300 whitespace-pre-line">
                 {person.biography}
               </p>
             </div>
@@ -134,8 +134,8 @@ export function PersonDetail() {
         {/* Si no hay biografía */}
         {!person.biography && (
           <div className="mb-8">
-            <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
-              <p className="text-gray-400 italic">No hay biografía disponible.</p>
+            <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6">
+              <p className="text-gray-400 italic text-sm sm:text-base">No hay biografía disponible.</p>
             </div>
           </div>
         )}
