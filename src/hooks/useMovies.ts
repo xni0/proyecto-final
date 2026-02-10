@@ -22,7 +22,7 @@ export function useMovies(type: 'popular' | 'now-playing' = 'popular') {
         setMovies(response.results);
       } catch (err) {
         // Obtener mensaje de error de forma segura
-        let errorMessage = 'Error al cargar películas';
+        let errorMessage = 'Error loading movies';
         if (err instanceof Error) {
           errorMessage = err.message;
         }
@@ -54,7 +54,7 @@ export function useMovieDetail(id: number) {
         setMovie(data);
       } catch (err) {
         // Obtener mensaje de error de forma segura
-        let errorMessage = 'Error al cargar película';
+        let errorMessage = 'Error loading movie';
         if (err instanceof Error) {
           errorMessage = err.message;
         }

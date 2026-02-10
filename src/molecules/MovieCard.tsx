@@ -34,7 +34,7 @@ export default function MovieCard({ movie }: MovieCardProps) {
         <button
           onClick={handleFavoriteClick}
           className="absolute top-3 right-3 z-10 p-2 rounded-full bg-white/80 hover:bg-white shadow-sm transition-all duration-200 hover:scale-110 border-none cursor-pointer"
-          title={isFav ? "Quitar de favoritos" : "Añadir a favoritos"}
+          title={isFav ? "Remove from favorites" : "Add to favorites"}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

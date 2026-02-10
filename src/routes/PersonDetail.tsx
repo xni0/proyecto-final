@@ -23,8 +23,8 @@ export function PersonDetail() {
       movieService.getPersonDetails(Number(id))
         .then(setPerson)
         .catch(err => {
-          console.error('Error cargando detalles de la persona:', err);
-          setError('No se pudieron cargar los detalles');
+          console.error('Error loading person details:', err);
+          setError('Unable to load details');
         })
         .finally(() => setLoading(false));
     }
@@ -41,7 +41,7 @@ export function PersonDetail() {
 
   // Estado de error
   if (error || !person) {
-    let mensajeError = 'Persona no encontrada';
+    let mensajeError = 'Person not found';
     if (error) {
       mensajeError = error;
     }
@@ -49,7 +49,7 @@ export function PersonDetail() {
     return (
       <div className="text-center py-12">
         <h2 className="text-2xl font-bold mb-4">❌ {mensajeError}</h2>
-        <Button onClick={() => navigate(-1)}>Volver</Button>
+        <Button onClick={() => navigate(-1)}>Back</Button>
       </div>
     );
   }
@@ -86,7 +86,7 @@ export function PersonDetail() {
                 {/* Departamento conocido */}
                 {person.known_for_department && (
                   <div>
-                    <span className="block text-sm text-gray-400 mb-1">Conocido por</span>
+                    <span className="block text-sm text-gray-400 mb-1">Known for</span>
                     <span className="block text-base sm:text-lg font-bold">{person.known_for_department}</span>
                   </div>
                 )}
@@ -94,7 +94,7 @@ export function PersonDetail() {
                 {/* Fecha de nacimiento */}
                 {person.birthday && (
                   <div>
-                    <span className="block text-sm text-gray-400 mb-1">Fecha de nacimiento</span>
+                    <span className="block text-sm text-gray-400 mb-1">Birth date</span>
                     <span className="block text-base sm:text-lg font-bold">{person.birthday}</span>
                   </div>
                 )}
@@ -102,7 +102,7 @@ export function PersonDetail() {
                 {/* Lugar de nacimiento */}
                 {person.place_of_birth && (
                   <div className="md:col-span-2">
-                    <span className="block text-sm text-gray-400 mb-1">Lugar de nacimiento</span>
+                    <span className="block text-sm text-gray-400 mb-1">Place of birth</span>
                     <span className="block text-base sm:text-lg font-bold">{person.place_of_birth}</span>
                   </div>
                 )}
@@ -110,7 +110,7 @@ export function PersonDetail() {
                 {/* Fecha de fallecimiento si existe */}
                 {person.deathday && (
                   <div>
-                    <span className="block text-sm text-gray-400 mb-1">Fecha de fallecimiento</span>
+                    <span className="block text-sm text-gray-400 mb-1">Death date</span>
                     <span className="block text-base sm:text-lg font-bold">{person.deathday}</span>
                   </div>
                 )}
@@ -122,7 +122,7 @@ export function PersonDetail() {
         {/* Biografía */}
         {person.biography && (
           <div className="mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Biografía</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Biography</h2>
             <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6">
               <p className="text-base sm:text-lg leading-relaxed text-gray-300 whitespace-pre-line">
                 {person.biography}
@@ -135,12 +135,12 @@ export function PersonDetail() {
         {!person.biography && (
           <div className="mb-8">
             <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6">
-              <p className="text-gray-400 italic text-sm sm:text-base">No hay biografía disponible.</p>
+              <p className="text-gray-400 italic text-sm sm:text-base">No biography available.</p>
             </div>
           </div>
         )}
 
-        <Button onClick={() => navigate(-1)}>← Volver</Button>
+        <Button onClick={() => navigate(-1)}>← Back</Button>
       </div>
     </div>
   );

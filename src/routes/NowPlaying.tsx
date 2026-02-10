@@ -27,7 +27,7 @@ export function NowPlaying() {
   if (movies.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-base sm:text-lg">No hay películas disponibles</p>
+        <p className="text-base sm:text-lg">No movies available</p>
       </div>
     );
   }
@@ -35,9 +35,9 @@ export function NowPlaying() {
   return (
     <div>
       <div className="text-center mb-8 sm:mb-12 p-5 sm:p-8 bg-white rounded-2xl shadow-lg">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">En Cines Ahora</h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Now Playing</h1>
         <p className="text-base sm:text-lg text-gray-500 m-0">
-          Las películas que puedes ver en el cine en este momento
+          Movies currently playing in theaters
         </p>
       </div>
 

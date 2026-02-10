@@ -52,7 +52,7 @@ export function Search() {
       setMovies(peliculasFiltradas);
     } catch (err) {
       // Obtener mensaje de error de forma segura
-      let errorMessage = 'Error al buscar películas';
+      let errorMessage = 'Error searching movies';
       if (err instanceof Error) {
         errorMessage = err.message;
       }
@@ -65,16 +65,16 @@ export function Search() {
   return (
     <div>
       <div className="text-center mb-8 sm:mb-12 p-5 sm:p-8 bg-white rounded-2xl shadow-lg">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Buscar Películas</h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Search Movies</h1>
         <p className="text-base sm:text-lg text-gray-500 m-0">
-          Encuentra tus películas favoritas por título
+          Find your favorite movies by title
         </p>
       </div>
 
       <div className="max-w-3xl mx-auto mb-8 sm:mb-12">
         <Input
           type="text"
-          placeholder="Escribe el título de una película..."
+          placeholder="Type a movie title..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="w-full"
@@ -95,7 +95,7 @@ export function Search() {
 
       {!loading && !error && hasSearched && movies.length === 0 && (
         <div className="text-center py-8 sm:py-12 text-gray-500 text-base sm:text-lg">
-          <p>No se encontraron películas con ese título</p>
+          <p>No movies found with that title</p>
         </div>
       )}
 
@@ -105,7 +105,7 @@ export function Search() {
 
       {!loading && !error && !hasSearched && (
         <div className="text-center py-8 sm:py-12 text-gray-500 text-base sm:text-lg">
-          <p>🔍 Escribe el título de una película para buscar</p>
+          <p>🔍 Type a movie title to search</p>
         </div>
       )}
     </div>

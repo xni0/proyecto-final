@@ -17,7 +17,7 @@ export default function Navbar() {
             onClick={logout}
             className="bg-gradient-to-br from-primary to-primary-light text-white border-none px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg cursor-pointer font-bold transition-all duration-300 text-sm sm:text-[0.95rem] hover:shadow-lg hover:shadow-primary/40 hover:-translate-y-0.5"
           >
-            Cerrar Sesión
+            Log Out
           </button>
         </>
       );
@@ -30,13 +30,13 @@ export default function Navbar() {
           to="/login"
           className="text-secondary-light no-underline font-semibold text-sm sm:text-[0.95rem] transition-colors duration-300 hover:text-primary-light relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-primary-light after:transition-all after:duration-300 hover:after:w-full"
         >
-          Iniciar Sesión
+          Log In
         </Link>
         <Link
           to="/register"
           className="bg-gradient-to-br from-primary to-primary-light text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg no-underline hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 text-sm sm:text-[0.95rem]"
         >
-          Registrarse
+          Sign Up
         </Link>
       </>
     );
@@ -57,25 +57,25 @@ export default function Navbar() {
             to="/"
             className="text-secondary-light no-underline font-semibold text-sm sm:text-[0.95rem] transition-colors duration-300 hover:text-primary-light relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-primary-light after:transition-all after:duration-300 hover:after:w-full"
           >
-            Inicio
+            Home
           </Link>
           <Link
             to="/search"
             className="text-secondary-light no-underline font-semibold text-sm sm:text-[0.95rem] transition-colors duration-300 hover:text-primary-light relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-primary-light after:transition-all after:duration-300 hover:after:w-full"
           >
-            Buscar
+            Search
           </Link>
           <Link
             to="/genres"
             className="text-secondary-light no-underline font-semibold text-sm sm:text-[0.95rem] transition-colors duration-300 hover:text-primary-light relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-primary-light after:transition-all after:duration-300 hover:after:w-full"
           >
-            Géneros
+            Genres
           </Link>
           <Link
             to="/now-playing"
             className="text-secondary-light no-underline font-semibold text-sm sm:text-[0.95rem] transition-colors duration-300 hover:text-primary-light relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-primary-light after:transition-all after:duration-300 hover:after:w-full"
           >
-            En Cines
+            Now Playing
           </Link>
 
           {isAuthenticated && (
@@ -83,7 +83,7 @@ export default function Navbar() {
               to="/favorites"
               className="text-secondary-light no-underline font-semibold text-sm sm:text-[0.95rem] transition-colors duration-300 hover:text-red-500 relative"
             >
-              Favoritos ❤️
+              Favorites ❤️
             </Link>
           )}
 

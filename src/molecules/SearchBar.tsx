@@ -8,7 +8,7 @@ interface SearchBarProps {
 export default function SearchBar(props: SearchBarProps) {
   // Extraer props de forma clara
   const onSearch = props.onSearch;
-  const placeholder = props.placeholder || 'Buscar películas...';
+  const placeholder = props.placeholder || 'Search movies...';
   
   const [query, setQuery] = useState('');
 

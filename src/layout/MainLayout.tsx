@@ -9,8 +9,8 @@ export function MainLayout() {
         <Outlet />
       </main>
       <footer className="bg-white px-4 sm:px-6 lg:px-8 py-6 sm:py-8 text-center text-gray-500 border-t border-gray-300 mt-10 sm:mt-16">
-        <p className="my-2 text-sm sm:text-base">© 2026 MovieHub - Proyecto Final React P9.2</p>
-        <p className="my-2 text-sm sm:text-base">Desarrollado con React, TypeScript y TMDB API</p>
+        <p className="my-2 text-sm sm:text-base">© 2026 MovieHub - Final React Project P9.2</p>
+        <p className="my-2 text-sm sm:text-base">Built with React, TypeScript, and TMDB API</p>
       </footer>
     </div>
   );

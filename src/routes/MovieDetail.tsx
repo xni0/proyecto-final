@@ -28,7 +28,7 @@ export function MovieDetail() {
       setLoadingCredits(true);
       movieService.getMovieCredits(Number(id))
         .then(setCredits)
-        .catch(err => console.error('Error cargando créditos:', err))
+        .catch(err => console.error('Error loading credits:', err))
         .finally(() => setLoadingCredits(false));
     }
   }, [id]);
@@ -45,7 +45,7 @@ export function MovieDetail() {
 
   if (error || !movie) {
     // Determinar mensaje de error
-    let mensajeError = 'Película no encontrada';
+    let mensajeError = 'Movie not found';
     if (error) {
       mensajeError = error;
     }
@@ -53,7 +53,7 @@ export function MovieDetail() {
     return (
       <div className="text-center py-12">
         <h2 className="text-2xl font-bold mb-4">❌ {mensajeError}</h2>
-        <Button onClick={() => navigate('/')}>Volver al inicio</Button>
+        <Button onClick={() => navigate('/')}>Back to Home</Button>
       </div>
     );
   }
@@ -138,14 +138,14 @@ export function MovieDetail() {
           
           {/* Sinopsis */}
           <div className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Sinopsis</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Synopsis</h2>
             <p className="text-base sm:text-lg leading-relaxed text-gray-300">{movie.overview}</p>
           </div>
 
           {/* SECCIÓN DE DIRECTORES */}
           {credits && (
             <div className="mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-white">Directores</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-white">Directors</h2>
               <div className="flex flex-wrap gap-4">
                 {credits.crew.map((persona) => {
                   // Solo mostrar si es director
@@ -184,7 +184,7 @@ export function MovieDetail() {
           {/* SECCIÓN DE ACTORES */}
           {credits && (
             <div className="mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-white">Reparto completo</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-white">Full Cast</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                 {credits.cast.map((actor, index) => {
                   // Solo mostrar los actores hasta el límite actual
@@ -222,14 +222,14 @@ export function MovieDetail() {
               {credits.cast.length > actoresAMostrar && (
                 <div className="text-center mt-8">
                   <Button onClick={() => setActoresAMostrar(actoresAMostrar + 10)}>
-                    Cargar más actores
+                    Load More Actors
                   </Button>
                 </div>
               )}
             </div>
           )}
 
-          <Button onClick={() => navigate(-1)}>← Volver</Button>
+          <Button onClick={() => navigate(-1)}>← Back</Button>
         </div>
       </div>
     </div>

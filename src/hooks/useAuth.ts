@@ -8,7 +8,7 @@ export function useAuth() {
   const [error, setError] = useState<string | null>(null);
 
   if (!context) {
-    throw new Error('useAuth debe usarse dentro de AuthProvider');
+    throw new Error('useAuth must be used within AuthProvider');
   }
 
   const { user, setUser } = context;
@@ -22,7 +22,7 @@ export function useAuth() {
       return true;
     } catch (err) {
       // Obtener mensaje de error de forma segura
-      let errorMessage = 'Error al iniciar sesión';
+      let errorMessage = 'Error logging in';
       if (err instanceof Error) {
         errorMessage = err.message;
       }
@@ -40,7 +40,7 @@ export function useAuth() {
       return true;
     } catch (err) {
       // Obtener mensaje de error de forma segura
-      let errorMessage = 'Error al registrarse';
+      let errorMessage = 'Error registering';
       if (err instanceof Error) {
         errorMessage = err.message;
       }

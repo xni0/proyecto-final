@@ -8,10 +8,10 @@ export const movieService = {
   // Obtener películas populares
   getPopularMovies: async (page: number = 1): Promise<MoviesResponse> => {
     const response = await fetch(
-      `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=es-ES&page=${page}`
+      `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=${page}`
     );
     if (!response.ok) {
-      throw new Error('Error al cargar películas populares');
+      throw new Error('Error loading popular movies');
     }
     return response.json();
   },
@@ -19,12 +19,12 @@ export const movieService = {
   // Buscar películas por título
   searchMovies: async (query: string, page: number = 1): Promise<MoviesResponse> => {
     const response = await fetch(
-      `${BASE_URL}/search/movie?api_key=${API_KEY}&language=es-ES&query=${encodeURIComponent(
+      `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${encodeURIComponent(
         query
       )}&page=${page}`
     );
     if (!response.ok) {
-      throw new Error('Error al buscar películas');
+      throw new Error('Error searching movies');
     }
     return response.json();
   },
@@ -32,10 +32,10 @@ export const movieService = {
   // Obtener detalles de una película
   getMovieDetails: async (id: number): Promise<MovieDetail> => {
     const response = await fetch(
-      `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=es-ES`
+      `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`
     );
     if (!response.ok) {
-      throw new Error('Error al cargar detalles de la película');
+      throw new Error('Error loading movie details');
     }
     return response.json();
   },
@@ -44,10 +44,10 @@ export const movieService = {
   getMoviesByGenres: async (genreIds: number[], page: number = 1): Promise<MoviesResponse> => {
     const genresParam = genreIds.join(',');
     const response = await fetch(
-      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=es-ES&with_genres=${genresParam}&page=${page}`
+      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=${genresParam}&page=${page}`
     );
     if (!response.ok) {
-      throw new Error('Error al cargar películas por género');
+      throw new Error('Error loading movies by genre');
     }
     return response.json();
   },
@@ -55,10 +55,10 @@ export const movieService = {
   // Obtener lista de géneros
   getGenres: async (): Promise<{ genres: Genre[] }> => {
     const response = await fetch(
-      `${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=es-ES`
+      `${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`
     );
     if (!response.ok) {
-      throw new Error('Error al cargar géneros');
+      throw new Error('Error loading genres');
     }
     return response.json();
   },
@@ -66,10 +66,10 @@ export const movieService = {
   // Obtener películas en cines
   getNowPlayingMovies: async (page: number = 1): Promise<MoviesResponse> => {
     const response = await fetch(
-      `${BASE_URL}/movie/now_playing?api_key=${API_KEY}&language=es-ES&page=${page}`
+      `${BASE_URL}/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${page}`
     );
     if (!response.ok) {
-      throw new Error('Error al cargar películas en cines');
+      throw new Error('Error loading now playing movies');
     }
     return response.json();
   },
@@ -77,10 +77,10 @@ export const movieService = {
   // Obtener créditos de una película (actores y directores)
   getMovieCredits: async (id: number): Promise<import('../types/movie.types').Credits> => {
     const response = await fetch(
-      `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}&language=es-ES`
+      `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}&language=en-US`
     );
     if (!response.ok) {
-      throw new Error('Error al cargar créditos de la película');
+      throw new Error('Error loading movie credits');
     }
     return response.json();
   },
@@ -88,10 +88,10 @@ export const movieService = {
   // Obtener información de una persona (actor/director)
   getPersonDetails: async (id: number): Promise<import('../types/movie.types').PersonDetail> => {
     const response = await fetch(
-      `${BASE_URL}/person/${id}?api_key=${API_KEY}&language=es-ES`
+      `${BASE_URL}/person/${id}?api_key=${API_KEY}&language=en-US`
     );
     if (!response.ok) {
-      throw new Error('Error al cargar información de la persona');
+      throw new Error('Error loading person information');
     }
     return response.json();
   },

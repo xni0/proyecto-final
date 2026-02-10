@@ -42,7 +42,7 @@ export function Home() {
         setMovies(todasLasPeliculas);
       }
     } catch (err) {
-      let mensaje = 'Error al cargar películas';
+      let mensaje = 'Error loading movies';
       if (err instanceof Error) {
         mensaje = err.message;
       }
@@ -84,9 +84,9 @@ export function Home() {
     <div className="animate-[fadeIn_0.6s_ease]">
       {/* Encabezado */}
       <div className="text-center mb-8 sm:mb-12 p-5 sm:p-8 bg-white rounded-2xl shadow-lg">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Películas Populares</h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Popular Movies</h1>
         <p className="text-base sm:text-lg text-gray-500 m-0">
-          Descubre las películas más populares del momento
+          Discover the most popular movies right now
         </p>
       </div>
 
@@ -96,7 +96,7 @@ export function Home() {
       {/* Botón para cargar más */}
       <div className="text-center mt-8 sm:mt-12 p-4 sm:p-8">
         <Button onClick={cargarMas} disabled={loading}>
-          {loading ? 'Cargando...' : 'Cargar Más Películas'}
+          {loading ? 'Loading...' : 'Load More Movies'}
         </Button>
       </div>
     </div>

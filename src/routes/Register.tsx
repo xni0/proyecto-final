@@ -22,11 +22,11 @@ export function Register() {
 
     // Validaciones simples
     if (password !== confirmPassword) {
-      setValidationError('Las contraseñas no coinciden');
+      setValidationError('Passwords do not match');
       return;
     }
     if (password.length < 6) {
-      setValidationError('La contraseña debe tener al menos 6 caracteres');
+      setValidationError('Password must be at least 6 characters');
       return;
     }
 
@@ -38,25 +38,25 @@ export function Register() {
   return (
     <div className="min-h-[80vh] flex items-center justify-center p-4 sm:p-8">
       <div className="bg-white p-6 sm:p-12 rounded-2xl shadow-2xl w-full max-w-md">
-        <h1 className="text-center text-2xl sm:text-3xl mb-6 sm:mb-8 text-primary-dark">🎬 Crear Cuenta</h1>
+        <h1 className="text-center text-2xl sm:text-3xl mb-6 sm:mb-8 text-primary-dark">🎬 Create Account</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <Input
             type="text"
-            placeholder="Usuario"
+            placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
           />
           <Input
             type="password"
-            placeholder="Contraseña"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
           <Input
             type="password"
-            placeholder="Confirmar Contraseña"
+            placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
@@ -69,11 +69,11 @@ export function Register() {
             }
             return null;
           })()}
-          <Button type="submit">Registrarse</Button>
+          <Button type="submit">Sign Up</Button>
           <p className="text-center text-xs sm:text-[0.85rem] text-gray-500 mt-4">
-            ¿Ya tienes cuenta?{' '}
+            Already have an account?{' '}
             <a href="/login" onClick={(e) => { e.preventDefault(); navigate('/login'); }} className="text-primary hover:underline">
-              Inicia sesión aquí
+              Log in here
             </a>
           </p>
         </form>

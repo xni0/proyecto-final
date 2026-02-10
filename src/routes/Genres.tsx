@@ -19,7 +19,7 @@ export function Genres() {
         const response = await movieService.getGenres();
         setGenres(response.genres);
       } catch (err) {
-        setError('Error al cargar géneros');
+        setError('Error loading genres');
       }
     };
     loadGenres();
@@ -45,7 +45,7 @@ export function Genres() {
         setMovies(response.results);
       } catch (err) {
         // Obtener mensaje de error de forma segura
-        let errorMessage = 'Error al cargar películas';
+        let errorMessage = 'Error loading movies';
         if (err instanceof Error) {
           errorMessage = err.message;
         }
@@ -61,9 +61,9 @@ export function Genres() {
   return (
     <div className="px-2 sm:px-0">
       <div className="text-center mb-8 sm:mb-12 p-5 sm:p-8 bg-white rounded-2xl shadow-lg">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Explorar por Género</h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black my-0 mb-2 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">Browse by Genre</h1>
         <p className="text-base sm:text-lg text-gray-500 m-0">
-          Selecciona uno o varios géneros para descubrir películas
+          Select one or more genres to discover movies
         </p>
       </div>
 
@@ -106,13 +106,13 @@ export function Genres() {
 
       {!loading && !error && selectedGenres.length > 0 && movies.length === 0 && (
         <div className="text-center py-8 sm:py-12 text-gray-500 text-base sm:text-lg">
-          <p>No se encontraron películas en este género</p>
+          <p>No movies found for this genre</p>
         </div>
       )}
 
       {!loading && !error && selectedGenres.length === 0 && (
         <div className="text-center py-8 sm:py-12 text-gray-500 text-base sm:text-lg">
-          <p>🎭 Selecciona uno o varios géneros para comenzar</p>
+          <p>🎭 Select one or more genres to get started</p>
         </div>
       )}
     </div>

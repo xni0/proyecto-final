@@ -13,7 +13,7 @@ type ApiUser = {
 
 const mapApiUserToUser = (apiUser: ApiUser): User => {
   // Obtener el username (intentar diferentes campos)
-  let username = 'usuario';
+  let username = 'user';
   if (apiUser.nick) {
     username = apiUser.nick;
   } else if (apiUser.usuario) {
@@ -51,13 +51,13 @@ export const authService = {
     );
 
     if (!response.ok) {
-      throw new Error('Error al obtener el usuario');
+      throw new Error('Error fetching user');
     }
 
     const data = await response.json();
 
     if (!data || data.usuario === null) {
-      throw new Error('Credenciales inválidas');
+      throw new Error('Invalid credentials');
     }
 
     return mapApiUserToUser(data.usuario as ApiUser);
@@ -71,7 +71,7 @@ export const authService = {
     });
 
     if (!response.ok) {
-      throw new Error('Error en el registro');
+      throw new Error('Registration error');
     }
 
     return authService.login(nick, pass);

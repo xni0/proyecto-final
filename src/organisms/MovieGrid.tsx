@@ -10,7 +10,7 @@ export function MovieGrid({ movies, title }: MovieGridProps) {
   if (movies.length === 0) {
     return (
       <div className="text-center py-10 sm:py-12 text-gray-500 text-base sm:text-lg">
-        <p>No se encontraron películas</p>
+        <p>No movies found</p>
       </div>
     );
   }
