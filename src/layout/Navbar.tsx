@@ -59,13 +59,22 @@ export default function Navbar() {
           >
             Inicio
           </Link>
-          <Link to="/search" className="...">
+          <Link
+            to="/search"
+            className="text-secondary-light no-underline font-semibold text-[0.95rem] transition-colors duration-300 hover:text-primary-light relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-primary-light after:transition-all after:duration-300 hover:after:w-full"
+          >
             Buscar
           </Link>
-          <Link to="/genres" className="...">
+          <Link
+            to="/genres"
+            className="text-secondary-light no-underline font-semibold text-[0.95rem] transition-colors duration-300 hover:text-primary-light relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-primary-light after:transition-all after:duration-300 hover:after:w-full"
+          >
             Géneros
           </Link>
-          <Link to="/now-playing" className="...">
+          <Link
+            to="/now-playing"
+            className="text-secondary-light no-underline font-semibold text-[0.95rem] transition-colors duration-300 hover:text-primary-light relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-primary after:to-primary-light after:transition-all after:duration-300 hover:after:w-full"
+          >
             En Cines
           </Link>
 

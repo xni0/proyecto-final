@@ -40,10 +40,11 @@ export const movieService = {
     return response.json();
   },
 
-  // Obtener películas por género
-  getMoviesByGenre: async (genreId: number, page: number = 1): Promise<MoviesResponse> => {
+  // Obtener películas por uno o varios géneros (AND)
+  getMoviesByGenres: async (genreIds: number[], page: number = 1): Promise<MoviesResponse> => {
+    const genresParam = genreIds.join(',');
     const response = await fetch(
-      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=es-ES&with_genres=${genreId}&page=${page}`
+      `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=es-ES&with_genres=${genresParam}&page=${page}`
     );
     if (!response.ok) {
       throw new Error('Error al cargar películas por género');
