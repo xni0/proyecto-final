@@ -3,10 +3,10 @@ import { MovieGrid } from '../organisms/MovieGrid';
 import Loader from '../atoms/Loader';
 
 export function NowPlaying() {
-  // Usar hook simplificado
+  
   const { movies, loading, error } = useMovies('now-playing');
 
-  // Estados de carga
+  
 
   if (loading) {
     return (

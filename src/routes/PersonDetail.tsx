@@ -9,14 +9,14 @@ export function PersonDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   
-  // Estado para los detalles de la persona
+  
   const [person, setPerson] = useState<PersonDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
   
-  // Cargar detalles de la persona
+ 
   useEffect(() => {
     if (id) {
       setLoading(true);
@@ -30,7 +30,7 @@ export function PersonDetail() {
     }
   }, [id]);
 
-  // Estado de carga
+ 
   if (loading) {
     return (
       <div className="text-center py-12">
@@ -39,7 +39,7 @@ export function PersonDetail() {
     );
   }
 
-  // Estado de error
+  
   if (error || !person) {
     let mensajeError = 'Person not found';
     if (error) {
@@ -54,7 +54,7 @@ export function PersonDetail() {
     );
   }
 
-  // Determinar imagen de perfil
+  
   let imagenPerfil = '/placeholder-person.png';
   if (person.profile_path) {
     imagenPerfil = `${IMAGE_BASE_URL}/w500${person.profile_path}`;
@@ -64,10 +64,10 @@ export function PersonDetail() {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-8 sm:py-12">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
         
-        {/* Información principal */}
+        
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 mb-10 sm:mb-12">
           
-          {/* Foto de perfil */}
+          
           <div className="flex-shrink-0 w-full sm:w-80">
             <img
               src={imagenPerfil}
@@ -76,14 +76,14 @@ export function PersonDetail() {
             />
           </div>
 
-          {/* Información básica */}
+          
           <div className="flex-1">
             <h1 className="text-3xl sm:text-5xl font-black mb-4 text-white">{person.name}</h1>
             
             <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6 mb-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white">
                 
-                {/* Departamento conocido */}
+               
                 {person.known_for_department && (
                   <div>
                     <span className="block text-sm text-gray-400 mb-1">Known for</span>
@@ -91,7 +91,7 @@ export function PersonDetail() {
                   </div>
                 )}
 
-                {/* Fecha de nacimiento */}
+               
                 {person.birthday && (
                   <div>
                     <span className="block text-sm text-gray-400 mb-1">Birth date</span>
@@ -99,7 +99,7 @@ export function PersonDetail() {
                   </div>
                 )}
 
-                {/* Lugar de nacimiento */}
+                
                 {person.place_of_birth && (
                   <div className="md:col-span-2">
                     <span className="block text-sm text-gray-400 mb-1">Place of birth</span>
@@ -107,7 +107,7 @@ export function PersonDetail() {
                   </div>
                 )}
 
-                {/* Fecha de fallecimiento si existe */}
+               
                 {person.deathday && (
                   <div>
                     <span className="block text-sm text-gray-400 mb-1">Death date</span>
@@ -119,7 +119,7 @@ export function PersonDetail() {
           </div>
         </div>
 
-        {/* Biografía */}
+       
         {person.biography && (
           <div className="mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Biography</h2>
@@ -131,7 +131,7 @@ export function PersonDetail() {
           </div>
         )}
 
-        {/* Si no hay biografía */}
+        
         {!person.biography && (
           <div className="mb-8">
             <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6">

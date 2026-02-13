@@ -5,15 +5,15 @@ import Button from '../atoms/Button';
 import Input from '../atoms/Input';
 
 export function Login() {
-  // Estado simple del formulario
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   
-  // Hook de autenticación
+  
   const { login, error } = useAuth();
   const navigate = useNavigate();
 
-  // Envío del formulario
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const success = await login(username, password);

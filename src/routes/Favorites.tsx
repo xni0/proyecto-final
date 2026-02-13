@@ -7,7 +7,7 @@ export function Favorites() {
   const { favorites } = useFavorites();
   const { isAuthenticated } = useAuth();
 
-  // Protección extra por si acaso
+  
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }

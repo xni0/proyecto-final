@@ -12,7 +12,7 @@ type ApiUser = {
 };
 
 const mapApiUserToUser = (apiUser: ApiUser): User => {
-  // Obtener el username (intentar diferentes campos)
+  
   let username = 'user';
   if (apiUser.nick) {
     username = apiUser.nick;
@@ -22,7 +22,7 @@ const mapApiUserToUser = (apiUser: ApiUser): User => {
     username = apiUser.nombre;
   }
   
-  // Obtener el email (intentar diferentes campos)
+  
   let email = undefined;
   if (apiUser.email) {
     email = apiUser.email;
@@ -30,13 +30,13 @@ const mapApiUserToUser = (apiUser: ApiUser): User => {
     email = apiUser.mail;
   }
   
-  // Obtener el id
+  
   let id = Date.now().toString();
   if (apiUser.id) {
     id = String(apiUser.id);
   }
 
-  // Retornar objeto usuario
+  
   return {
     id,
     username,
@@ -77,12 +77,12 @@ export const authService = {
     return authService.login(nick, pass);
   },
 
-  // Guardar usuario en localStorage
+  
   saveUser: (user: User): void => {
     localStorage.setItem('moviehub_user', JSON.stringify(user));
   },
 
-  // Obtener usuario guardado
+  
   getStoredUser: (): User | null => {
     const userStr = localStorage.getItem('moviehub_user');
     if (!userStr) return null;
@@ -93,7 +93,7 @@ export const authService = {
     }
   },
 
-  // Cerrar sesión
+  
   logout: (): void => {
     localStorage.removeItem('moviehub_user');
   },

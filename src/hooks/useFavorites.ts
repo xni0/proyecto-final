@@ -6,7 +6,7 @@ export function useFavorites() {
   const { user, isAuthenticated } = useAuth();
   const [favorites, setFavorites] = useState<Movie[]>([]);
 
-  // Cargar favoritos cuando cambia el usuario
+
   useEffect(() => {
     if (isAuthenticated && user?.username) {
       const storedFavs = localStorage.getItem(`favorites_${user.username}`);
@@ -20,13 +20,13 @@ export function useFavorites() {
     }
   }, [isAuthenticated, user]);
 
-  // Guardar en localStorage cada vez que cambia el estado favorites
+  
   const updateLocalStorage = (newFavs: Movie[]) => {
     if (user?.username) {
       localStorage.setItem(`favorites_${user.username}`, JSON.stringify(newFavs));
       setFavorites(newFavs);
       
-      // Disparar evento para sincronizar otras pestañas/componentes si fuera necesario
+      
       window.dispatchEvent(new Event("storage"));
     }
   };

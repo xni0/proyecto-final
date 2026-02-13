@@ -6,17 +6,17 @@ interface SearchBarProps {
 }
 
 export default function SearchBar(props: SearchBarProps) {
-  // Extraer props de forma clara
+  
   const onSearch = props.onSearch;
   const placeholder = props.placeholder || 'Search movies...';
   
   const [query, setQuery] = useState('');
 
-  // Manejar envio del formulario
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Verificar que hay texto
+    
     const trimmedQuery = query.trim();
     if (trimmedQuery) {
       onSearch(trimmedQuery);

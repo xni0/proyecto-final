@@ -5,22 +5,22 @@ import Button from '../atoms/Button';
 import Input from '../atoms/Input';
 
 export function Register() {
-  // Estado simple del formulario
+ 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [validationError, setValidationError] = useState<string | null>(null);
   
-  // Hook de autenticación
+  
   const { register, error } = useAuth();
   const navigate = useNavigate();
 
-  // Validación y envío del formulario
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setValidationError(null);
 
-    // Validaciones simples
+    
     if (password !== confirmPassword) {
       setValidationError('Passwords do not match');
       return;
@@ -30,7 +30,7 @@ export function Register() {
       return;
     }
 
-    // Registrar usuario
+    
     const success = await register(username, password);
     if (success) navigate('/');
   };
@@ -61,7 +61,7 @@ export function Register() {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
-          {/* Mostrar error si existe */}
+          
           {(() => {
             const errorMessage = validationError || error;
             if (errorMessage) {
