@@ -8,13 +8,22 @@
 A modern web application to explore movies using **The Movie Database (TMDB)** API. Developed with React, TypeScript, and Vite, featuring a robust architecture and declarative routing.
 
 ## 📋 Table of Contents
-- [Features](#-features)
-- [Project Structure](#-project-structure)
-- [Component Analysis](#-component-analysis)
-- [Installation & Setup](#-installation--setup)
-- [Technologies](#-technologies-used)
+- [🎯 Objectives](#-objectives)
+- [✨ Features](#-features)
+- [📸 Screenshots](#-screenshots)
+- [📖 Usage Guide](#-usage-guide)
+- [📁 Project Structure](#-project-structure)
+- [🔍 Component Analysis](#-component-analysis)
+- [🚀 Installation & Setup](#-installation--setup)
+- [🎨 Technologies Used](#-technologies-used)
+- [📝 Developer Notes](#-developer-notes)
 
 ---
+## 🎯 Objectives
+- Build a full-featured React application using **TypeScript**.
+- Implement **Atomic Design** for a scalable component architecture.
+- Master **Declarative Routing** and Route Guards.
+- Integrate third-party APIs (TMDB) and external authentication services.
 
 ## ✨ Features
 
@@ -25,6 +34,52 @@ A modern web application to explore movies using **The Movie Database (TMDB)** A
 - 📱 **Responsive Design**: Fully adapted for mobile and desktop using Tailwind CSS.
 - 🛡️ **Protected Routes**: Secure access control for authenticated users.
 - ⚡ **Declarative Mode**: Clean and readable React Router implementation.
+
+---
+## 📸 Screenshots
+
+Below are the visual highlights of **MovieHub**. The interface is designed to provide an immersive and fluid cinematic experience.
+
+### 🏠 Home & Discovery
+Browse the most popular movies right now. The interface features a clean grid layout with modern hover effects and real-time data from the TMDB API.
+
+![Popular Movies](src/assets/images/image_1.png)
+
+### 🧩 Browse & Selection
+Users can navigate through various categories and view movie ratings and release years at a glance. The design focuses on high-quality posters and clear typography.
+
+<p align="center">
+  <img src="src/assets/images/image_2.png" width="90%" alt="Movie Grid" />
+</p>
+
+### 🎬 Movie Details (Protected View)
+A deep dive into movie information, featuring dynamic hero sections with backdrop images, full synopses, and detailed cast information.
+
+![Movie Details](src/assets/images/image_3.png)
+
+### 🔍 Smart Search & Genre Filtering
+Find exactly what you are looking for using our real-time search bar or browse specific movie categories through the intuitive genre filter.
+
+<p align="center">
+  <img src="src/assets/images/image_4.png" width="48%" alt="Search View" />
+  <img src="src/assets/images/image_5.png" width="48%" alt="Genre View" />
+</p>
+
+### 🔐 Secure Authentication
+A clean and user-friendly login interface that protects sensitive routes and allows users to manage their personal movie collections.
+
+<p align="center">
+  <img src="src/assets/images/image_6.png" width="60%" alt="Login View" />
+</p>
+
+---
+
+## 📖 Usage Guide
+1. **Explore**: Browse the home page to see popular movies.
+2. **Search**: Use the search bar to find specific titles with real-time feedback.
+3. **Filter**: Go to the Genres page to narrow down movies by categories.
+4. **Favorites**: Log in to save your favorite movies to your personal list.
+5. **Details**: Click on any movie card to see full information, cast, and crew.
 
 ---
 
