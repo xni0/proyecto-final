@@ -11,6 +11,7 @@ A modern web application to explore movies using **The Movie Database (TMDB)** A
 - [🎯 Objectives](#-objectives)
 - [✨ Features](#-features)
 - [📸 Screenshots](#-screenshots)
+- [🎨 Design Prototype](#-design-prototype)
 - [📖 Usage Guide](#-usage-guide)
 - [📁 Project Structure](#-project-structure)
 - [🔍 Component Analysis](#-component-analysis)
@@ -74,6 +75,13 @@ A clean and user-friendly login interface that protects sensitive routes and all
 
 ---
 
+## 🎨 Design Prototype
+
+View the complete design and interactive prototype on Figma:
+🔗 [MovieHub Figma Prototype](https://www.figma.com/proto/Ujz8e2Dvhz8WwouklpEzvJ/Sin-t%C3%ADtulo?node-id=0-1&t=eYyBFfmA1ULWHH09-1)
+
+---
+
 ## 📖 Usage Guide
 1. **Explore**: Browse the home page to see popular movies.
 2. **Search**: Use the search bar to find specific titles with real-time feedback.
@@ -83,7 +91,57 @@ A clean and user-friendly login interface that protects sensitive routes and all
 
 ---
 
-## 📁 Project Structure
+## � API Documentation
+
+This application integrates two main APIs for data and authentication:
+
+### 🎬 TMDB API (The Movie Database)
+**Base URL:** `https://api.themoviedb.org/3`
+
+#### Endpoints Used:
+
+| Endpoint | Method | Description | Parameters |
+|----------|--------|-------------|-----------|
+| `/movie/popular` | GET | Get a list of popular movies | `api_key`, `language`, `page` |
+| `/movie/now_playing` | GET | Get movies currently in theaters | `api_key`, `language`, `page` |
+| `/search/movie` | GET | Search for movies by title | `api_key`, `query`, `page` |
+| `/movie/{id}` | GET | Get detailed information about a specific movie | `api_key`, `language` |
+| `/movie/{id}/credits` | GET | Get cast and crew information for a movie | `api_key`, `language` |
+| `/discover/movie` | GET | Discover movies with genre filters | `api_key`, `with_genres`, `page` |
+| `/genre/movie/list` | GET | Get all available movie genres | `api_key`, `language` |
+| `/person/{id}` | GET | Get detailed information about a person | `api_key`, `language` |
+
+**Authentication:** Requires `api_key` parameter in all requests.
+
+**Image URLs:** Use `https://image.tmdb.org/t/p/{size}/{path}` for poster/backdrop images.
+- Recommended sizes: `w500`, `w1280`, `original`
+
+---
+
+### 🔐 Authentication API (Custom - IES Azarquiel)
+**Base URL:** `http://www.ies-azarquiel.es/paco/apigafas`
+
+#### Endpoints Used:
+
+| Endpoint | Method | Description | Parameters |
+|----------|--------|-------------|-----------|
+| `/usuario` | GET | Login user with credentials | `nick`, `pass` |
+| `/usuario` | POST | Register a new user | `nick` (body), `pass` (body) |
+
+**Authentication Flow:**
+1. User submits credentials (nick/username and password)
+2. API validates and returns user object with id, nick/username, and email
+3. User session is stored in localStorage as `moviehub_user`
+4. Subsequent requests check localStorage for authentication state
+
+**Error Handling:**
+- Invalid credentials: Throws "Invalid credentials" error
+- Registration fails: Throws "Registration error" 
+- Network errors: Appropriate error messages displayed to user
+
+---
+
+## �📁 Project Structure
 
 This project follows the **Atomic Design** principles for component organization.
 
