@@ -50,7 +50,7 @@ export function MovieDetail() {
                   <Star size={18} fill="currentColor" /> {movie.vote_average.toFixed(1)}
                 </span>
                 <span className="flex items-center gap-2 font-medium">
-                  <Calendar size={20} className="text-primary" /> {movie.release_date.split('-')[0]}
+                  <Calendar size={20} className="text-primary" /> {new Date(movie.release_date).toLocaleDateString('es-ES')}
                 </span>
                 <span className="flex items-center gap-2 font-medium">
                   <Clock size={20} className="text-primary" /> {movie.runtime} min
@@ -97,7 +97,7 @@ export function MovieDetail() {
                 ))}
               </div>
               {credits.cast.length > actoresAMostrar && (
-                <div className="mt-8">
+                <div className="mt-8 flex justify-center">
                    <Button onClick={() => setActoresAMostrar(prev => prev + 10)} variant="secondary">Load More</Button>
                 </div>
               )}
@@ -106,8 +106,8 @@ export function MovieDetail() {
         </div>
       </div>
 
-      <div className="px-12 pb-20">
-        <Button onClick={() => navigate(-1)} variant="secondary" className="flex items-center gap-2">
+      <div className="flex justify-center pb-20">
+        <Button onClick={() => navigate(-1)} variant="primary" className="flex items-center gap-2">
           <ChevronLeft size={20} /> Back
         </Button>
       </div>

@@ -46,7 +46,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
             <Star size={16} className="fill-primary" /> {movie.vote_average.toFixed(1)}
           </span>
           <span className="flex items-center gap-1 text-gray-400 font-medium">
-            <Calendar size={14} /> {movie.release_date.split('-')[0]}
+            <Calendar size={14} /> {new Date(movie.release_date).toLocaleDateString('es-ES')}
           </span>
         </div>
       </div>

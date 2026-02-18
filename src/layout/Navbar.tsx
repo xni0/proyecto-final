@@ -50,11 +50,11 @@ export default function Navbar() {
           <Film size={32} className="text-primary" /> MovieHub
         </Link>
 
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-secondary-light focus:outline-none">
+        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-secondary-light focus:outline-none">
           {isOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
 
-        <div className="hidden md:flex gap-8 items-center">
+        <div className="hidden lg:flex gap-8 items-center">
           <Link to="/" className={linkClass}>Home</Link>
           <Link to="/search" className={linkClass}>Search</Link>
           <Link to="/genres" className={linkClass}>Genres</Link>
@@ -69,7 +69,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className={`${isOpen ? "max-h-[500px] opacity-100 py-8" : "max-h-0 opacity-0 py-0"} md:hidden bg-secondary overflow-hidden transition-all duration-500 ease-in-out px-6`}>
+      <div className={`${isOpen ? "max-h-[500px] opacity-100 py-8" : "max-h-0 opacity-0 py-0"} lg:hidden bg-secondary overflow-hidden transition-all duration-500 ease-in-out px-6`}>
         <div className="flex flex-col gap-6">
           <Link to="/" className={linkClass} onClick={toggleMenu}>Home</Link>
           <Link to="/search" className={linkClass} onClick={toggleMenu}>Search</Link>
