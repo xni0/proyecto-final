@@ -14,7 +14,7 @@ export function NotFound() {
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <Button onClick={() => navigate('/')}>Back to Home</Button>
-          <Button onClick={() => navigate(-1)} variant="secondary" className="bg-primary/80 border-primary/50 text-white hover:bg-primary/90 hover:border-primary">
+          <Button onClick={() => navigate(-1)} className="bg-primary/80 border-primary/50 text-white hover:bg-primary/90 hover:border-primary border">
             Go Back
           </Button>
         </div>
