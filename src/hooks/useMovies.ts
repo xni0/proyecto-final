@@ -2,6 +2,13 @@ import { useState, useEffect } from 'react';
 import type { Movie, MovieDetail } from '../types/movie.types';
 import { movieService } from '../services/movie.service';
 
+const getErrorMessage = (err: unknown, fallback: string) => {
+  if (err instanceof Error) {
+    return err.message;
+  }
+  return fallback;
+};
+
 
 export function useMovies(type: 'popular' | 'now-playing' = 'popular') {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -14,19 +21,17 @@ export function useMovies(type: 'popular' | 'now-playing' = 'popular') {
       try {
         setLoading(true);
         setError(null);
-        
-        const response = type === 'popular' 
-          ? await movieService.getPopularMovies()
-          : await movieService.getNowPlayingMovies();
-          
+
+        let response;
+        if (type === 'popular') {
+          response = await movieService.getPopularMovies();
+        } else {
+          response = await movieService.getNowPlayingMovies();
+        }
+
         setMovies(response.results);
       } catch (err) {
-        
-        let errorMessage = 'Error loading movies';
-        if (err instanceof Error) {
-          errorMessage = err.message;
-        }
-        setError(errorMessage);
+        setError(getErrorMessage(err, 'Error loading movies'));
       } finally {
         setLoading(false);
       }
@@ -53,12 +58,7 @@ export function useMovieDetail(id: number) {
         const data = await movieService.getMovieDetails(id);
         setMovie(data);
       } catch (err) {
-        
-        let errorMessage = 'Error loading movie';
-        if (err instanceof Error) {
-          errorMessage = err.message;
-        }
-        setError(errorMessage);
+        setError(getErrorMessage(err, 'Error loading movie'));
       } finally {
         setLoading(false);
       }

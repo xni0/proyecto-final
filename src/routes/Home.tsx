@@ -25,21 +25,7 @@ export function Home() {
       if (page === 1) {
         setMovies(respuesta.results);
       } else {
-        const peliculasAnteriores = movies;
-        const peliculasNuevas = respuesta.results;
-        const todasLasPeliculas: Movie[] = [];
-        
-        
-        peliculasAnteriores.forEach(pelicula => {
-          todasLasPeliculas.push(pelicula);
-        });
-        
-        
-        peliculasNuevas.forEach(pelicula => {
-          todasLasPeliculas.push(pelicula);
-        });
-        
-        setMovies(todasLasPeliculas);
+        setMovies(prev => prev.concat(respuesta.results));
       }
     } catch (err) {
       let mensaje = 'Error loading movies';
