@@ -5,7 +5,7 @@ import { movieService } from '../services/movie.service';
 import type { Credits } from '../types/movie.types';
 import Loader from '../atoms/Loader';
 import Button from '../atoms/Button';
-import { Star, Clock, Calendar, ChevronLeft, User, Film } from 'lucide-react';
+import { Star, Clock, Calendar, ChevronLeft, Film } from 'lucide-react';
 
 export function MovieDetail() {
   const { id } = useParams<{ id: string }>();
