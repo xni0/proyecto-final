@@ -26,6 +26,10 @@ A modern web application to explore movies using **The Movie Database (TMDB)** A
 - Master **Declarative Routing** and Route Guards.
 - Integrate third-party APIs (TMDB) and external authentication services.
 
+## 💻 Presentation 
+
+🔗 [MovieHub Canva Presentation](https://www.canva.com/design/DAHBwRzkPTQ/BPA-i_xPuAjt2RYDp81lYQ/edit?utm_content=DAHBwRzkPTQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 ## ✨ Features
 
 - 🔐 **Secure Authentication** via external API (JWT/Token based).
@@ -91,7 +95,7 @@ View the complete design and interactive prototype on Figma:
 
 ---
 
-## � API Documentation
+## 📃 API Documentation
 
 This application integrates two main APIs for data and authentication:
 
@@ -141,7 +145,7 @@ This application integrates two main APIs for data and authentication:
 
 ---
 
-## �📁 Project Structure
+## 📁 Project Structure
 
 This project follows the **Atomic Design** principles for component organization.
 
